@@ -1,0 +1,24 @@
+<form class="form" [formGroup]="form">
+  <div class="fields">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Kilometers</mat-label>
+      <input matInput type="number" required name="kilometers" formControlName="kilometers" placeholder="Kilometers">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Age</mat-label>
+      <input matInput type="number" required name="age" formControlName="age" placeholder="Age">
+    </mat-form-field>
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Baggage</mat-label>
+      <input matInput type="number" required name="baggage" formControlName="baggage" placeholder="Baggage">
+    </mat-form-field>
+  </div>
+  <button
+    mat-raised-button
+    color="primary"
+    [disabled]="form.invalid"
+    (click)="calculate()"
+  >
+    Рассчитать
+  </button>
+</form>

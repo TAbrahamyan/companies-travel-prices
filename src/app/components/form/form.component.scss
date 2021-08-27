@@ -1,0 +1,17 @@
+form {
+  display: grid;
+  gap: 20px;
+
+  .fields {
+    display: flex;
+    gap: 20px;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  button {
+    padding: 0.4rem;
+  }
+}

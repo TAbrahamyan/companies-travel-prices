@@ -1,0 +1,16 @@
+<div class="company-prices">
+  <div *ngFor="let item of companyPricesService.companyPrices">
+    <mat-list *ngIf="item.economyPrice || item.advancedPrice || item.luxuryPrice">
+      <mat-card class="title">{{ item.name }}</mat-card>
+      <mat-card *ngIf="item.economyPrice">
+        Эконом: {{ item.economyPrice }} ₽
+      </mat-card>
+      <mat-card *ngIf="item.advancedPrice">
+        Продвинутый: {{ item.advancedPrice }} ₽
+      </mat-card>
+      <mat-card *ngIf="item.luxuryPrice">
+        Люкс: {{ item.luxuryPrice }} ₽
+      </mat-card>
+    </mat-list>
+  </div>
+</div>
