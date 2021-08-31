@@ -1,11 +1,9 @@
 import { Component } from '@angular/core';
-import {
-  FormGroup,
-  FormControl,
-  Validators,
-} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 import { CompanyPricesService } from 'src/app/services/company-prices.service';
-import { aeroflotAviacompany, railwayCompany } from 'src/app/constants';
+import { aeroflotAviacompany, railwayCompany } from 'src/app/utils/constants';
+import { ICompanyPrices } from 'src/app/utils/interfaces';
 
 @Component({
   selector: 'app-form',
@@ -22,8 +20,11 @@ export class FormComponent {
   constructor (private companyPricesService: CompanyPricesService) { }
 
   calculate() {
-    const aeroflotAviacompanyPrice = this.companyPricesService.calculate(aeroflotAviacompany, this.form.value.kilometers, this.form.value.age, this.form.value.baggage);
-    const railwayCompanyPrice = this.companyPricesService.calculate(railwayCompany, this.form.value.kilometers, this.form.value.age, this.form.value.baggage);
+    const { kilometers, age, baggage } = this.form.value;
+
+    const aeroflotAviacompanyPrice: ICompanyPrices = this.companyPricesService.calculate(aeroflotAviacompany, kilometers, age, baggage);
+    const railwayCompanyPrice: ICompanyPrices = this.companyPricesService.calculate(railwayCompany, kilometers, age, baggage);
+
     this.companyPricesService.companyPrices.length = 0;
     this.companyPricesService.companyPrices.push(aeroflotAviacompanyPrice, railwayCompanyPrice);
   }

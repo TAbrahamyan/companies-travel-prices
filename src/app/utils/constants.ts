@@ -1,4 +1,6 @@
-export const aeroflotAviacompany: any = {
+import { ITravelCompany } from './interfaces';
+
+export const aeroflotAviacompany: ITravelCompany = {
   name: 'Аэрофлот',
   economy: {
     pricePerOneKilometer: 4,
@@ -27,6 +29,7 @@ export const aeroflotAviacompany: any = {
   luxury: {
     pricePerOneKilometer: 15,
     baggagePriceWhenExceedingMaxWeight: null,
+    maxFreeBaggageWeight: Infinity,
     maxBaggageWeight: 50,
     discountForChildrens: {
       age: 16,
@@ -36,7 +39,7 @@ export const aeroflotAviacompany: any = {
   },
 };
 
-export const railwayCompany: any = {
+export const railwayCompany: ITravelCompany = {
   name: 'РЖД',
   economy: {
     pricePerOneKilometer: 0.5,
@@ -69,6 +72,7 @@ export const railwayCompany: any = {
   luxury: {
     pricePerOneKilometer: 4,
     baggagePriceWhenExceedingMaxWeight: null,
+    maxFreeBaggageWeight: Infinity,
     maxBaggageWeight: 60,
     discountForChildrens: {
       age: 16,

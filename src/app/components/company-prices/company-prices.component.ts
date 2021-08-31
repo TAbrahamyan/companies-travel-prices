@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+
 import { CompanyPricesService } from 'src/app/services/company-prices.service';
 
 @Component({
